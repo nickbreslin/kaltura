@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/kaltura/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/kaltura-analytics/" : "/",
   chainWebpack: (config) => {
     config.plugin("html").tap((args) => {
       args[0].title =
