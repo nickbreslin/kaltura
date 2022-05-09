@@ -1,34 +1,12 @@
 <template>
   <div class="home">
     <div class="container mt-5">
-      <div class="h1 border-bottom mb-5">Kaltura Analytics Demo</div>
-
       <Viewer />
-
-      <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8 mt-5">
-          <!-- card -->
-          <div class="footer border-top mb-5 pt-3">
-            <p class="m-0">
-              Kaltura Analytics Demo made by
-              <a href="https://www.nickbreslin.com">Nick Breslin</a>.
-            </p>
-            <p class="m-0">
-              Proudly built with
-              <a href="https://https://vuejs.org/">Vue</a> and
-              <a href="https://getbootstrap.com/">Bootstrap</a>.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-//import WPM from "@/components/WPM";
-//import Textarea from "@/components/Textarea";
 import Viewer from "@/components/Viewer";
 
 export default {
@@ -38,20 +16,20 @@ export default {
     return {
       btnGroups: {
         words: 0,
-        rate: 0,
+        rate: 0
       },
       ratePicker: 130,
       timer: {
         start: 0,
         end: 0,
         duration: 0, // In milliseconds
-        isRunning: false,
+        isRunning: false
       },
       script: {
         words: 0,
-        copy: "",
+        copy: ""
       },
-      wpmType: 130,
+      wpmType: 130
     };
   },
   methods: {
@@ -76,7 +54,7 @@ export default {
       duration = duration.toFixed(2);
 
       return duration;
-    },
+    }
   },
   computed: {
     scriptWordCount() {
@@ -142,7 +120,7 @@ export default {
       let length = (this.getWordCount / this.getSpeakingRate) * 60;
       length = Math.round(length);
       return length;
-    },
-  },
+    }
+  }
 };
 </script>
