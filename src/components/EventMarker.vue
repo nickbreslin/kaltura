@@ -23,8 +23,8 @@ export default {
   props: {
     id: String,
     label: String,
-    fired: Boolean,
-  },
+    fired: Boolean
+  }
 };
 </script>
 

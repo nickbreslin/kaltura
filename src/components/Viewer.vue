@@ -12,9 +12,6 @@
     </div>
   </div>
   <div class="row mb-5">
-    <!-- <div class="col">
-      <p>Duration: {{ duration }}</p>
-    </div>-->
     <div class="col">
       <div class="card">
         <div class="card-header">Total watch time</div>
@@ -41,7 +38,7 @@ export default {
   name: "Viewer",
   components: {
     EventMarker,
-    StackChart,
+    StackChart
   },
   data: function () {
     return {
@@ -53,29 +50,29 @@ export default {
         {
           id: "firstPlay",
           label: "First Play",
-          fired: false,
+          fired: false
         },
         {
           id: "firstQuartile",
           label: "25%",
-          fired: false,
+          fired: false
         },
         {
           id: "secondQuartile",
           label: "50%",
-          fired: false,
+          fired: false
         },
         {
           id: "thirdQuartile",
           label: "75%",
-          fired: false,
+          fired: false
         },
         {
           id: "playerPlayEnd",
           label: "100%",
-          fired: false,
-        },
-      ],
+          fired: false
+        }
+      ]
     };
   },
   computed: {
@@ -118,7 +115,7 @@ export default {
     },
     uniquePercent() {
       return Math.round((100 / this.duration) * this.uniqueWatchTime);
-    },
+    }
   },
   methods: {
     setEvent(id) {
@@ -134,7 +131,7 @@ export default {
     setEnd(timestamp) {
       this.watches.push({
         start: this.startFrom,
-        duration: timestamp - this.startFrom,
+        duration: timestamp - this.startFrom
       });
     },
     setDuration(duration) {
@@ -142,7 +139,7 @@ export default {
     },
     setPlayState(value) {
       this.isPlaying = value;
-    },
+    }
   },
   mounted() {
     let partnerID = 391241;
@@ -165,11 +162,11 @@ export default {
         entry_id: `${entryId}`,
         flashvars: {
           // flashvars allows you to set runtime uiVar configuration overrides.
-          autoPlay: false,
+          autoPlay: false
         },
         params: {
           // params allows you to set flash embed params such as wmode, allowFullScreen etc
-          wmode: "transparent",
+          wmode: "transparent"
         },
         readyCallback: function (playerId) {
           var kdp = document.getElementById(playerId);
@@ -230,12 +227,9 @@ export default {
           kdp.kBind("seeked", function (timestamp) {
             ref.setStart(timestamp);
           });
-        },
+        }
       });
     }, 1000);
-  },
+  }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>

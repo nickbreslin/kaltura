@@ -15,7 +15,7 @@ export default {
   },
   props: {
     chartData: Array,
-    duration: Number,
+    duration: Number
   },
 
   methods: {
@@ -41,7 +41,7 @@ export default {
       }
 
       return labels;
-    },
+    }
   },
   watch: {
     duration() {
@@ -53,8 +53,8 @@ export default {
       handler() {
         this.chart.data.datasets[0].data = this.formatData();
         this.chart.update();
-      },
-    },
+      }
+    }
   },
   mounted() {
     Chart.register(...registerables);
@@ -64,34 +64,34 @@ export default {
         labels: this.formatLabels(),
         datasets: [
           {
-            data: this.formatData(),
-          },
-        ],
+            data: this.formatData()
+          }
+        ]
       },
       options: {
         scales: {
           xAxis: {
             grid: {
-              display: false,
-            },
+              display: false
+            }
           },
           yAxis: {
-            display: false,
-          },
+            display: false
+          }
         },
         maintainAspectRatio: false,
         responsive: true,
         plugins: {
           legend: {
-            display: false,
+            display: false
           },
           title: {
-            display: false,
-          },
-        },
-      },
+            display: false
+          }
+        }
+      }
     });
-  },
+  }
 };
 </script>
 
