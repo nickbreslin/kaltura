@@ -1,9 +1,5 @@
 <template>
-  <div class="home">
-    <div class="container mt-5">
-      <Viewer />
-    </div>
-  </div>
+  <Viewer />
 </template>
 
 <script>
